@@ -1,3 +1,5 @@
+import { combineReducers } from "redux";
+
 const songsReducer = () => {
   return [
     { title: "Top 100 songs of the 1990s", duration: "14:50" },
@@ -13,3 +15,8 @@ const selectedSongReducer = (selectedSong = null, action) => {
 
   return selectedSong;
 };
+
+export default combineReducers({
+  songs: songsReducer,
+  selectedSong: selectedSongReducer,
+});
